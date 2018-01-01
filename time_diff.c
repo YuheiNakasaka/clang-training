@@ -4,7 +4,7 @@
 #include <sys/types.h>
 #include <regex.h>
 
-void match(char *time1, char *h1, char *m1, char *s1) {
+void match(char *time1, char *h, char *m, char *s) {
   char *pattern1 = "([0-9]{2}):([0-9]{2}):([0-9]{2})";
   regex_t preg;
   size_t nmatch = 4;
@@ -21,12 +21,12 @@ void match(char *time1, char *h1, char *m1, char *s1) {
   if (regexec(&preg, time1, nmatch, pmatch, 0) != 0) {
     printf("No match\n");
   } else {
-    strncpy(h1, &time1[pmatch[1].rm_so], 2);
-    h1[2] = '\0';
-    strncpy(m1, &time1[pmatch[2].rm_so], 2);
-    m1[2] = '\0';
-    strncpy(s1, &time1[pmatch[3].rm_so], 2);
-    s1[2] = '\0';
+    strncpy(h, &time1[pmatch[1].rm_so], 2);
+    h[2] = '\0';
+    strncpy(m, &time1[pmatch[2].rm_so], 2);
+    m[2] = '\0';
+    strncpy(s, &time1[pmatch[3].rm_so], 2);
+    s[2] = '\0';
   }
   regfree(&preg);
 }
@@ -35,8 +35,8 @@ void match(char *time1, char *h1, char *m1, char *s1) {
 int main(int argc, char *argv[]) {
   char time1[] = "19:23:40";
   char time2[] = "21:08:32";
-  char h1[6], m1[6], s1[6];
-  char h2[6], m2[6], s2[6];
+  char h1[3], m1[3], s1[3];
+  char h2[3], m2[3], s2[3];
   match(time1, h1, m1, s1);
   match(time2, h2, m2, s2);
 
