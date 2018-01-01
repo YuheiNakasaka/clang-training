@@ -1,0 +1,11 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "0.1.0",
+  "command": "gcc", // このタスクランナーで実行するコマンド
+  "isShellCommand": true, //  実行するコマンドがVS Code外部のシェルやコマンドプロンプトから実行されるものか。この場合は値がtrueなので、これは外部コマンド
+  "showOutput": "always", // 出力方法の指定。always（常にVS Codeに出力結果を表示）／silent（problemMatcherプロパティが指定されていないときにのみ、VS Codeに出力結果を表示）／never（VS Codeに出力結果を常に表示しない）を指定可能
+  "args": ["-g", "-O0", "-o", "step.out", "step.c"],
+  // 実行するコマンドに渡す引数
+  "problemMatcher": "$tsc" // エラー発生時にVS Codeに渡されるメッセージのフォーマットをどんな形式のメッセージとして処理するかの指定。この場合は「$tsc」となっているが、これはtscコマンド（TypeScriptコンパイラー）が出力する形式のメッセージとして処理することを指定している
+}
