@@ -1,18 +1,16 @@
 #include <stdio.h>
 
-void sum(int *a) {
+void sum(int *a, int l) {
   int sum = 0;
-  int length = sizeof(a) / sizeof(a[0]);
-  for (int n = 0; n < length; n++) {
+  for (int n = 0; n < l; n++) {
     sum += a[n];
   }
   printf("sum: %d\n", sum);
 }
 
-void max(int *a) {
+void max(int *a, int l) {
   int max = a[0];
-  int length = sizeof(a) / sizeof(a[0]);
-  for (int n = 0; n < length; n++) {
+  for (int n = 0; n < l; n++) {
     if (a[n] > max) {
       max = a[n];
     }
@@ -21,8 +19,9 @@ void max(int *a) {
 }
 
 int main() {
-  int src[] = {23, 10, 3, 8};
-  sum(src);
-  max(src);
+  int src[4] = {23, 10, 3, 8};
+  int length = sizeof(src) / sizeof(src[0]);
+  sum(src, length);
+  max(src, length);
   return 0;
 }
