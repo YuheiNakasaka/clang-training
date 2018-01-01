@@ -50,7 +50,12 @@ int main(int argc, char *argv[]) {
   printf("sec2: %d\n", sec2);
 
   // 差分を出す
-  int diff = sec2 - sec1;
+  int diff;
+  if (sec2 > sec1) {
+    diff = sec2 - sec1;
+  } else {
+    diff = sec1 - sec2;
+  }
 
   // 時間に戻す
   int h = diff / (60*60);
