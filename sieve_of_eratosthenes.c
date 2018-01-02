@@ -30,13 +30,20 @@ int main() {
 
     if (data[m] == 1) {
       result[n] = m;
-      printf("%d\n", m);
     }
     m++;
     n++;
   }
 
+  // 1とarr_l自身を追加
+  result[1] = 1;
+  result[n] = arr_l;
 
+  for(int i = 0;i < arr_l; i++) {
+    if (result[i] != 0) {
+      printf("%d\n", result[i]);
+    }
+  }
 
   return 0;
 }
