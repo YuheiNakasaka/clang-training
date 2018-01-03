@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 50000
+#define N 10
 
 void rand_array(int *array) {
   srand((unsigned int)time(NULL));
    for (int i = 0; i < N; i++) {
-     array[i] = rand();
+     array[i] = (int)(rand()*(N - 0 + 1.0) / (1.0 + RAND_MAX));
    }
 }
 
