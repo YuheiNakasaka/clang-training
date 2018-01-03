@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 10
+#define N 50000
 
 void rand_array(int *array) {
   srand((unsigned int)time(NULL));
@@ -22,7 +22,7 @@ void output_array(int *array) {
 int main() {
   int array[N];
   rand_array(array);
-  output_array(array);
+  // output_array(array);
 
   int flag;
   int k = 0;
@@ -39,6 +39,7 @@ int main() {
     k++;
   } while(flag == 1);
 
-  output_array(array);
+  // output_array(array);
+  printf("Finish sorting");
   return 0;
 }
