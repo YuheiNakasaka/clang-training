@@ -31,6 +31,7 @@ void sentinel_search(int *data, int n) {
     i++;
   }
 
+  data[N - 1] = tmp; // 配列を元に戻す
   if (i < N - 1) {
     printf("i = %d\n", i);
   }
